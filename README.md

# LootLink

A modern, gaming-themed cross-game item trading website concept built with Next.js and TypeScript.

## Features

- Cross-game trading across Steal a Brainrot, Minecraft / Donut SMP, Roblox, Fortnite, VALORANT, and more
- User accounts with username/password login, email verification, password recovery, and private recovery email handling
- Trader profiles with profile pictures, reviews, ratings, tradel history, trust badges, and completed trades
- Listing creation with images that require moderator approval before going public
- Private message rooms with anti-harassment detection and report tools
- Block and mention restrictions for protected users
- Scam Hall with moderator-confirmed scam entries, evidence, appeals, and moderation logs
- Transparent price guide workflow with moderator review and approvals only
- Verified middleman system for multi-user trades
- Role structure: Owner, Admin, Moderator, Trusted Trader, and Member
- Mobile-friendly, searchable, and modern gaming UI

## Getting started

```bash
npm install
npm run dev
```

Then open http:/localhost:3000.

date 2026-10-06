@@ -1,0 +1,29 @@
+const actions = [
+  { title: 'Ban a user', detail: 'Suspend accounts for clear fraud or repeated harassment.' },
+  { title: 'Mute user', detail: 'Limit messaging and notifications during review.' },
+  { title: 'Restrict listings', detail: 'Hide or remove trade listings with policy issues.' },
+  { title: 'Review reports', detail: 'Investigate claims, evidence, and public context.' },
+  { title: 'Approve photos', detail: 'Review uploaded images before they go live.' },
+  { title: 'Review chart submissions', detail: 'Approve or reject suggested market values with evidence.' },
+];
+
+export default function ModeratorDashboardPage() {
+  return (
+    <main className="container">
+      <section className="page-hero">
+        <p className="eyebrow">Moderator dashboard</p>
+        <h1>Trust and enforcement tools.</h1>
+      </section>
+
+      <section className="trade-grid">
+        {actions.map((action) => (
+          <article key={action.title} className="dashboard-card site-card">
+            <h3>{action.title}</h3>
+            <p className="subtle">{action.detail}</p>
+            <button className="secondary-btn">Open action</button>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
+}
